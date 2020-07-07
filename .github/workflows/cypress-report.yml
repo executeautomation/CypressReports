@@ -23,7 +23,16 @@ jobs:
 
       - name: Run Cypress tests
         run: npm run test:chrome
-        continue-on-error: false
+        continue-on-error: true
+        with:
+            record: true
+        env:
+            CYPRESS_RECORD_KEY: ${{ secrets.RECORDING_KEY }}
+      
+      - name: Print Dashboard URL
+        run: |
+            echo Cypress finished with: ${{ steps.cypress.outcome }}
+            echo See results at ${{ steps.cypress.outputs.dashboardUrl }}
 
       - name: Copy test execution videos and screenshots
         run: |
