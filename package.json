@@ -7,7 +7,7 @@
 
 
     "devDependencies": {
-        "cypress": "4.9.0",
+        "cypress": "4.12.1",
         "mochawesome": "6.1.1",
         "mochawesome-merge": "4.1.0",
         "mochawesome-report-generator": "5.1.0"
